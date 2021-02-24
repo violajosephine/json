@@ -20,6 +20,7 @@ fetch(url, options)
     //we have the data
     console.log(data);
     //handle the data
+    handleData(data);
   })
   .catch((e) => {
     console.error("An Error Occured:", e.message);
@@ -36,17 +37,40 @@ fetch(url1, options)
     //we have the data
     console.log(data1);
     //handle the data
+    handleData1(data1);
   })
   .catch((e) => {
     console.error("An Error Occured:", e.message);
   });
 
-  function handleData(breathe) {
-      breathe.forEach(emotion) => {
-  }
-//make a template
-//grab it 
-//clone it 
-//populate with data
-//append it
+function handleData(breathe) {
+  breathe.forEach((emotion) => {
+    console.log(emotion);
+    //make a template
+    //grab it
+    const template = document.querySelector("template").content;
+    //clone it
+    const clone = template.cloneNode(true);
+    //populate with data
+    clone.querySelector("h1").textContent = emotion.category;
+    clone.querySelector("h3").textContent = emotion.description;
+    //append it
+    const mainEl = document.querySelector("main");
+    mainEl.appendChild(clone);
+  });
 }
+
+function handleData1(breathe) {
+  breathe.forEach((emotion) => {
+    console.log(emotion);
+    //make a template
+    //grab it
+    //clone it
+    //populate with data
+    //append it
+    //
+  });
+}
+
+// TEXT: category description img
+// ADVICE: category title advice_1 advice_2 advice_3 img
