@@ -75,7 +75,8 @@ function showEmotion(emotion) {
   console.log(emotion);
 
   //populate site
-  document.querySelector(".category").textContent = emotion.category;
+  document.querySelector(".category").textContent =
+    "You're feeling " + emotion.category + "!";
   document.querySelector(".description").textContent = emotion.description;
   document.querySelector(".title").textContent = emotion.title;
   document.querySelector(".advice1").textContent = emotion.advice_1;
